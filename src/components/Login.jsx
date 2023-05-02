@@ -42,16 +42,16 @@ const Login = () => {
     }
 
 return (
-    <>
-        <h2>Formulario de login</h2>
-        <form onSubmit={handleSubmit}>
+    <div className='bg-slate-600 text-center h-screen'>
+        <h2 className='text-4xl py-4 text-white'>Formulario de login</h2>
+        <form onSubmit={handleSubmit} className='flex flex-col items-center py-6 text-white'>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Ingrese su email" />
+            <input type="email" name="email" id="email" className='text-black my-2 p-1 rounded' placeholder="Ingrese su email" />
             <label htmlFor="password">Contraseña</label>
-            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" />
-            <button type="submit">Ingresar</button>
+            <input type="password" name="password" id="password" className='text-black my-2 p-1 rounded' placeholder="Ingrese su contraseña" />
+            <button type="submit" className='rounded bg-slate-300 px-6 py-1 mt-4 text-black'>Ingresar</button>
         </form>
-    </>
+    </div>
   )
 }
 

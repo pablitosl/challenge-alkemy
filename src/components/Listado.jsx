@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cards from './Cards';
 
 const Listado = () => {
 
     let navigate = useNavigate();
-
+    
     useEffect(() => {
         const token = localStorage.getItem('token');
         if(!token){
@@ -13,7 +14,10 @@ const Listado = () => {
     }, [navigate])
     
     return (
-        <div>Listado Componente</div>
+        <div>
+            <h2 className='text-4xl py-4'>Listado Componente</h2>
+            <Cards />
+        </div>
     )
 }
 
