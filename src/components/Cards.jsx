@@ -16,7 +16,6 @@ const Cards = () => {
             })
     }, [setMovies])
     
-    console.log(movies)
     return (
         <div className='grid grid-cols-4 gap-4 justify-items-center'>
             { movies.map((movie) => {
