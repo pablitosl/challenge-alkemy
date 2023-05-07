@@ -2,6 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import swal from '@sweetalert/with-react'
+import { useEffect } from 'react';
 
 const Login = () => {
 
@@ -36,10 +37,17 @@ const Login = () => {
                 timer: 1500,
             })
             const token = res.data.token;
-            localStorage.setItem('token', token);
+            sessionStorage.setItem('token', token);
             navigate('/listado');
         });
     }
+    
+    useEffect(() => {
+        const token = sessionStorage.getItem('token');
+        if(token){
+            navigate('/listado');
+        }
+    }, [navigate])
 
 return (
     <div className='bg-slate-600 text-center h-screen'>
@@ -52,7 +60,7 @@ return (
             <button type="submit" className='rounded bg-slate-300 px-6 py-1 mt-4 text-black'>Ingresar</button>
         </form>
     </div>
-  )
+)
 }
 
 export default Login
