@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import './fav.css'
+import toogleFavs from '../service/toogleFavs';
 
 const Cards = () => {
 
@@ -20,8 +22,13 @@ const Cards = () => {
         <div className='grid grid-cols-4 gap-4 justify-items-center'>
             { movies.map((movie) => {
             return (
-                <div key={movie.id} className='border w-80 my-2 flex flex-col justify-between'>
+                <div key={movie.id} className='border w-80 my-2 flex flex-col justify-between relative'>
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <button 
+                    className='favBtn disabled'
+                    onClick={toogleFavs}
+                    data-movie-id = {movie.id}
+                    >❤️</button>
                     <h3 className='text-2xl text-center font-bold p-1'>{movie.title}</h3>
                     <p className='p-3'>{movie.overview.substring(0,120)}...</p>
                     <Link to={`/detalle?movieID=${movie.id}`} className='text-center font-bold bg-red-600 p-2 px-4'>Ver detalle</Link>
