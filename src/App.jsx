@@ -1,4 +1,4 @@
-import { Routes , Route } from 'react-router-dom';
+import { Routes , Route, Navigate } from 'react-router-dom';
 
 import Login from './components/Login'
 import Listado from "./components/Listado";
@@ -17,6 +17,7 @@ function App() {
         <Route path="/listado" element={<Listado />} />
         <Route path='/detalle' element={<Detalle />} />
         <Route path='/resultados' element={<Resultados/>} />
+        <Route path='*' element={ < Navigate to='/' /> } />
       </Routes>
     </>
   )
