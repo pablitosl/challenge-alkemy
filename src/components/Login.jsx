@@ -6,6 +6,13 @@ import { useEffect } from 'react';
 
 const Login = () => {
 
+    /*
+    CUENTA DE PRUEBA:
+        email: challenge@alkemy.org
+        password: react
+    */
+
+
     let navigate = useNavigate();
     //http://challenge-react.alkemy.org/
     const handleSubmit = (e) =>{

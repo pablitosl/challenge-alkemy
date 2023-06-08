@@ -11,7 +11,7 @@ const Header = () => {
             <ul className='flex items-center gap-x-6 text-2xl'>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/listado'>Listado</Link></li>
-                <li><Link to='/contacto'>Contacto</Link></li>
+                <li><Link to='/contacto'>Favoritos</Link></li>
             </ul>
         </nav>
     </header>
